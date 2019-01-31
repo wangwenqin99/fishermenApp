@@ -11,7 +11,7 @@
         <div
             v-show='charList.length>0'
             ref="echart"
-            style="width:350px; height:350px"
+            style="width:360px;height:350px"
         ></div>
         <div class='empty' v-show='charList.length == 0'>暂无数据。。。</div>
     </div>
@@ -95,23 +95,28 @@ export default {
                 var myChart = echarts.init(this.$refs.echart);
                 // 绘制图表
                 myChart.setOption({
-                   title: {
-                        x: 'center',
+                   title: { 
+                    //    text: '主标题',
+                        // show:false
                     },
+                    
                     tooltip: {
                         trigger: 'item',
                         formatter: "{b} : {d}%"
                     },
                     legend: {
-
+                        // bottom: 10,
+                        // left: 'center',
+                        data: []
                     },
-                    color:['#F93B7D','#27C9A3','#F469B6','#F5A715','#F9584E','#50DBDA'],
+                    color:['#FF7870','#FFD11C','#8DCC57','#3B8BFC','#F93B7D','#27C9A3','#F469B6','#F5A715','#F9584E','#50DBDA'],
                     series: [
                         {
                             type: 'pie',
-                            radius: ['30%', '60%'],
-                            center: ['50%', '60%'],//饼图的中心（圆心）坐标
+                            radius: ['25%', '45%'],
+                            center: ['50%', '50%'],//饼图的中心（圆心）坐标
                             data: valueList,
+                            hoverAnimation: false,
                             itemStyle: {},
                             label:{            //饼图图形上的文本标签
                                 normal:{
@@ -119,7 +124,8 @@ export default {
                                     // position:'inner', //标签的位置
                                     textStyle : {
                                         // fontWeight : 300 ,
-                                        fontSize : 12    //文字的字体大小
+                                        color: '#666666',
+                                        fontSize : 14    //文字的字体大小
                                     },
                                     formatter:'{b} {c}'
 
@@ -165,27 +171,32 @@ export default {
                         value: month||0
                     })
                 })
+                this.charList = res.list;
                 var myChart = echarts.init(this.$refs.echart);
                 // 绘制图表
                 myChart.setOption({
-                   title: {
-                        x: 'center',
+                   title: { 
+                    //    text: '主标题',
+                        // show:false
                     },
+                    
                     tooltip: {
                         trigger: 'item',
                         formatter: "{b} : {d}%"
                     },
                     legend: {
+                        // bottom: 10,
+                        // left: 'center',
+                        data: []
                     },
-                    color:['#F93B7D','#27C9A3','#F469B6','#F5A715','#F9584E','#50DBDA'],
+                    color:['#FF7870','#FFD11C','#8DCC57','#3B8BFC','#F93B7D','#27C9A3','#F469B6','#F5A715','#F9584E','#50DBDA'],
                     series: [
                         {
-                            // name: '访问来源',
                             type: 'pie',
-                            radius: ['30%', '60%'],
-                            // radius: '55%',//饼图的半径
-                            center: ['50%', '60%'],//饼图的中心（圆心）坐标
+                            radius: ['25%', '45%'],
+                            center: ['50%', '50%'],//饼图的中心（圆心）坐标
                             data: valueList,
+                            hoverAnimation: false,
                             itemStyle: {},
                             label:{            //饼图图形上的文本标签
                                 normal:{
@@ -193,7 +204,8 @@ export default {
                                     // position:'inner', //标签的位置
                                     textStyle : {
                                         // fontWeight : 300 ,
-                                        fontSize : 12    //文字的字体大小
+                                        color: '#666666',
+                                        fontSize : 14    //文字的字体大小
                                     },
                                     formatter:'{b} {c}'
 

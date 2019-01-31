@@ -287,7 +287,7 @@ export default {
                     this.$vux.loading.hide();
                 }
                 let arrs = this.getAllTime(res.list);
-                let allChart = this.sliceArray(arrs,5);
+                let allChart = this.sliceArray(arrs,7);
                 this.allChart = allChart;
                 for (let index = 0; index < this.allChart.length; index++) {
                     let titleList = [];
@@ -407,7 +407,7 @@ export default {
                     this.$vux.loading.hide();
                 }
                 let arrs = this.getAllTime2(res.list);
-                let allChart = this.sliceArray(arrs,5);
+                let allChart = this.sliceArray(arrs,7);
                 this.allChart = allChart;
                 for (let index = 0; index < this.allChart.length; index++) {
                     let titleList = [];
@@ -430,6 +430,7 @@ export default {
                             title: {
                                 x: "center"
                             },
+
                             tooltip: {},
                             xAxis: {
                                 data: titleList,
